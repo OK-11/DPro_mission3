@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_13_083402) do
+ActiveRecord::Schema.define(version: 2024_08_13_120129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 2024_08_13_083402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+  end
+
+  create_table "chinese_foods", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -46,6 +51,16 @@ ActiveRecord::Schema.define(version: 2024_08_13_083402) do
     t.bigint "foodable_id", null: false
     t.index ["foodable_type", "foodable_id"], name: "index_foods_on_foodable"
     t.index ["shop_id"], name: "index_foods_on_shop_id"
+  end
+
+  create_table "italian_foods", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "japanese_foods", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "order_foods", force: :cascade do |t|
